@@ -1,0 +1,31 @@
+{
+  "name": "girugi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bilingual Korea-life hub for foreigners",
+  "workspaces": [
+    "mobile",
+    "admin",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:mobile": "npm run dev --workspace=mobile",
+    "dev:admin": "npm run dev --workspace=admin",
+    "dev:convex": "npx convex dev",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "korea",
+    "expat",
+    "bilingual",
+    "guide",
+    "mobile"
+  ],
+  "author": "Girugi Team",
+  "license": "UNLICENSED"
+}
