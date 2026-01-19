@@ -396,7 +396,7 @@ export const mockEvents = [...];
 ### Task 1.2: Admin UI Components
 
 **Owner**: Agent B  
-**Status**: [ ]
+**Status**: [x] **COMPLETED** (January 19, 2026)
 
 **Create** in `admin/src/components/ui/`:
 
@@ -410,10 +410,37 @@ export const mockEvents = [...];
 | `Modal.tsx` | P1 | open, onClose, title |
 
 **Acceptance Criteria:**
-- [ ] Each component matches style-guide.md
-- [ ] Uses Tailwind classes
-- [ ] TypeScript props defined
-- [ ] Accessible (keyboard nav, focus states)
+- [x] Each component matches style-guide.md
+- [x] Uses Tailwind classes
+- [x] TypeScript props defined
+- [x] Accessible (keyboard nav, focus states)
+
+**Completion Summary:**
+- Created 6 UI components following style-guide.md design system with Tailwind CSS
+- Button: Primary (gradient), Secondary (bordered), Ghost, Danger variants with loading/disabled states
+- Card: Default, Muted, Bordered variants with CardHeader, CardTitle, CardDescription, CardContent, CardFooter, StatCard exports
+- Input: Text input with label, error, helper text, leading/trailing icons; also Textarea and Select components
+- Badge: 6 variants (default, primary, success, warning, danger, info); StatusBadge, CountBadge, RoleBadge presets
+- Table: Generic data table with column config, actions column, loading skeleton, empty state; TablePagination component
+- Modal: Dialog with backdrop, focus trap, escape key handling, portal rendering; ConfirmModal preset
+
+**Files Created:**
+- `admin/src/components/ui/Button.tsx`
+- `admin/src/components/ui/Card.tsx`
+- `admin/src/components/ui/Input.tsx`
+- `admin/src/components/ui/Badge.tsx`
+- `admin/src/components/ui/Table.tsx`
+- `admin/src/components/ui/Modal.tsx`
+
+**Files Modified:**
+- `admin/src/components/ui/index.ts` - Added all component exports
+
+**How to Verify:**
+1. `cd admin && npx tsc --noEmit` (should pass with no errors)
+2. `cd admin && npm run dev -- -p 3050`
+3. Import components in any page: `import { Button, Card, Badge } from '@/components/ui'`
+4. Test keyboard navigation on interactive components
+5. Verify focus states are visible (ring around focused elements)
 
 **Do NOT edit:**
 - Any mobile files
