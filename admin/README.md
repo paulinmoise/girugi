@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Girugi Admin Console
+
+This is the **Girugi Admin Console** (Next.js App Router).
 
 ## Getting Started
 
-First, run the development server:
+From this `admin/` directory:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Which URL to open?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Next.js will print the actual URL/port in the terminal (usually `http://localhost:3000`, but if that port is already in use it will pick another and print it). **Use the URL shown in the terminal output.**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If you want to force a specific port (recommended to avoid confusion), run:
 
-## Learn More
+```bash
+npm run dev -- -p 3050
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then open `http://localhost:3050`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Routing (App Router)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This app uses **route groups**, so folders like `(dashboard)` do **not** appear in the URL.
 
-## Deploy on Vercel
+- `/` is served by `src/app/(dashboard)/page.tsx`
+- `/login` is served by `src/app/(auth)/login/page.tsx`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/page.tsx` does **not** exist in this project. If you see documentation referencing it, it's likely leftover boilerplate.
